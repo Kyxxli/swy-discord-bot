@@ -5,5 +5,5 @@ EmbedBuilder infoEmbed = EmbedBuilder(
   description:
   'Estos son los comandos disponibles en la categoría '
   'de Información.\n'
-  '`help`, `info`, `support`, `invite`',
+  '```\nhelp, info, invite, support```',
 );
