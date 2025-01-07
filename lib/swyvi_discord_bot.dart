@@ -1,1 +1,1 @@
-export 'src/commands/help_command.dart' show helpCommand;
+export 'src/commands/info/help_command.dart' show helpCommand;
