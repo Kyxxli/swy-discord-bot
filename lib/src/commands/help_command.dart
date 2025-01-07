@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_commands/nyxx_commands.dart';
+import 'package:swyvi_discord_bot/src/utils/get_id.dart';
 
 import '../utils/get_cmd_extra_data.dart';
 import '../utils/read_globals.dart';
@@ -28,7 +29,7 @@ ChatCommand helpCommand = ChatCommand(
     int b = rand.nextInt(75) + 180;
 
     // Si el usuario no paso el COC, responder con el embed por defecto
-    if (context.arguments.isEmpty) {
+    if (context.arguments.isEmpty || coc == null) {
       EmbedBuilder help = EmbedBuilder(
         author: EmbedAuthorBuilder(
           name: client.username,
@@ -101,7 +102,7 @@ ChatCommand helpCommand = ChatCommand(
         }
       } else {
         try {
-          ChatCommand? comm = context.commands.getCommand(StringView(coc!));
+          ChatCommand? comm = context.commands.getCommand(StringView(coc));
 
           if (comm == null) {
             context.respond(MessageBuilder(
@@ -156,13 +157,23 @@ ChatCommand helpCommand = ChatCommand(
         } catch (err) {
           var globals = await readGlobals();
 
-          String reply = context.user.id == globals.swyOwnerID
-            ? 'Un error ocurrió al ejecutar el comando:\n```\n$err```'
-            : 'Un error ocurrió al ejecutar el comando.';
+          logging.stdout.write('>> (at ${getGuildName(context)} with id ${getGuildID(context)}) $err');
 
-          context.respond(MessageBuilder(
-            content: reply
-          ));
+          if (globals['SWY_OWNER_ID'] == context.user.id) {
+            context.respond(MessageBuilder(
+              content: '```\n$err```',
+              allowedMentions: AllowedMentions(
+                repliedUser: false
+              )
+            ));
+          } else {
+            context.respond(MessageBuilder(
+              content: 'Error al ejecutar el comando.',
+              allowedMentions: AllowedMentions(
+                repliedUser: false
+              )
+            ));
+          }
         }
       }
     }
