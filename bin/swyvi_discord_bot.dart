@@ -5,7 +5,7 @@ import 'package:dotenv/dotenv.dart';
 import 'package:logger/logger.dart' as l;
 
 // Load all commands
-import 'commands/help_command.dart';
+import 'package:swyvi_discord_bot/swyvi_discord_bot.dart';
 
 void main() async {
   final environ = DotEnv(includePlatformEnvironment: true)..load();
