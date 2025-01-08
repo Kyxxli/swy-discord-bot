@@ -42,9 +42,14 @@ void main() async {
         IgnoreExceptions(),
         CliIntegration()
       ],
-
     )
   );
+
+  commands.onCommandError.listen((CommandsException exception) {
+    if (exception.message.startsWith('Command') && exception.message.endsWith('not found')) return;
+
+    logging.stderr.write(exception.stackTrace);
+  });
 
   bot.onMessageDelete.listen((MessageDeleteEvent ev) {
     if (ev.guild == null) return;
