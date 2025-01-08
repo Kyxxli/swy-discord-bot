@@ -1,0 +1,6 @@
+---
+# Extra data required for help command
+usage: "&snipe"
+examples:
+  - "&snipe"
+since: 1
