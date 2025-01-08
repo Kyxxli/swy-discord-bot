@@ -30,6 +30,7 @@ void main() async {
   // Add all commands
   commands.addCommand(helpCommand);
   commands.addCommand(snipeCommand);
+  commands.addCommand(inviteCommand);
 
   final bot = await Nyxx.connectGateway(
     environ['SWY_AUTH_SECRET'] as String,

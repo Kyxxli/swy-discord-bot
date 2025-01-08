@@ -1,0 +1,6 @@
+---
+# Extra data required for help command
+usage: "&invite"
+examples:
+  - "&invite"
+since: 1
