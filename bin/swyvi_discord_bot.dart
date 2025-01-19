@@ -24,6 +24,7 @@ void main() async {
 
     options: CommandsOptions(
       logErrors: false,
+      type: CommandType.slashOnly
     )
   );
 
@@ -31,6 +32,7 @@ void main() async {
   commands.addCommand(helpCommand);
   commands.addCommand(snipeCommand);
   commands.addCommand(inviteCommand);
+  commands.addCommand(sayCommand);
 
   final bot = await Nyxx.connectGateway(
     environ['SWY_AUTH_SECRET'] as String,
