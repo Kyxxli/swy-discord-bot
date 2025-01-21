@@ -29,10 +29,16 @@ void main() async {
   );
 
   // Add all commands
+
+  // Info
   commands.addCommand(helpCommand);
-  commands.addCommand(snipeCommand);
   commands.addCommand(inviteCommand);
+
+  // Utils
+  commands.addCommand(snipeCommand);
   commands.addCommand(sayCommand);
+  commands.addCommand(avatarCommand);
+  commands.addCommand(avatarUserCommand); // u#
 
   final bot = await Nyxx.connectGateway(
     environ['SWY_AUTH_SECRET'] as String,

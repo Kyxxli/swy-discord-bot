@@ -1,0 +1,8 @@
+---
+# Extra data required for help command
+usage: "/avatar [usuario]"
+examples:
+  - "/avatar @fulano.de.tal"
+  - "/avatar"
+user_command: 'Ver avatar'
+since: 1
