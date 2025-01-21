@@ -82,6 +82,8 @@ UserCommand avatarUserCommand = UserCommand(
     Uri avWebp = formatAvatar(context.targetUser.avatar, 2048, CdnFormat.webp);
     Uri avGif = formatAvatar(context.targetUser.avatar, 2048, CdnFormat.gif);
 
+    var [r, g, b] = getRandomPastelColor();
+
     EmbedBuilder avatarEmbed = EmbedBuilder(
         author: EmbedAuthorBuilder(
           name: 'Swy~vi!',
@@ -95,7 +97,8 @@ UserCommand avatarUserCommand = UserCommand(
         footer: EmbedFooterBuilder(
           text: 'Solicitado por ${context.user.globalName ?? context.user.username}',
           iconUrl: context.user.avatar.url
-        )
+        ),
+        color: DiscordColor.fromRgb(r, g, b)
       );
 
       context.respond(MessageBuilder(
