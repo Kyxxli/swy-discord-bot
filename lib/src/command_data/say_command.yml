@@ -1,0 +1,7 @@
+---
+# Extra data required for help command
+usage: "/say <mensaje>"
+examples:
+  - "/say hola"
+  - "/say Hola a todos!"
+since: 1
