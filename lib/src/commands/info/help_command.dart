@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_commands/nyxx_commands.dart';
 import 'package:swyvi_discord_bot/src/utils/get_id.dart';
+import 'package:swyvi_discord_bot/src/utils/get_random_color.dart';
 
 import '../../utils/get_cmd_extra_data.dart';
 import '../../utils/read_globals.dart';
@@ -22,11 +21,7 @@ ChatCommand helpCommand = ChatCommand(
     User client = await context.client.user.fetch();
 
     // Generar un color pastel aleatorio
-    Random rand = Random();
-
-    int r = rand.nextInt(75) + 180;
-    int g = rand.nextInt(75) + 180;
-    int b = rand.nextInt(75) + 180;
+    var [r, g, b] = getRandomPastelColor();
 
     // Si el usuario no paso el COC, responder con el embed por defecto
     if (context.arguments.isEmpty || coc == null) {

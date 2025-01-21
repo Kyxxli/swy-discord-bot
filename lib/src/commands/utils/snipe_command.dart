@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 
 import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_commands/nyxx_commands.dart';
 import 'package:path/path.dart' as path;
+import 'package:swyvi_discord_bot/src/utils/get_random_color.dart';
 import 'package:swyvi_discord_bot/src/utils/to_list.dart';
 import 'package:swyvi_discord_bot/src/utils/utils.dart';
 
@@ -25,11 +25,7 @@ ChatCommand snipeCommand = ChatCommand(
     User author = await context.user.fetch();
     // User client = await context.client.user.fetch();
 
-    Random rand = Random();
-
-    int r = rand.nextInt(75) + 180;
-    int g = rand.nextInt(75) + 180;
-    int b = rand.nextInt(75) + 180;
+    var [r, g, b] = getRandomPastelColor();
 
     String swyTempDataPath = Platform.environment['SWY_TEMP']!;
     File snipeFile = File(path.join(swyTempDataPath, '${context.guild!.id}.guildmsgs.json'));
