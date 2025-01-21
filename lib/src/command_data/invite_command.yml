@@ -1,6 +1,6 @@
 ---
 # Extra data required for help command
-usage: "&invite"
+usage: "/invite"
 examples:
-  - "&invite"
+  - "/invite"
 since: 1

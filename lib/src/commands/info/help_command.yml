@@ -1,7 +1,0 @@
----
-# Extra data required for help command
-usage: "&help [*][categoria o comando]"
-examples:
-  - "&help *miscellaneous"
-  - "&help ban"
-since: 1  

@@ -1,6 +1,6 @@
 ---
 # Extra data required for help command
-usage: "&snipe"
+usage: "/snipe"
 examples:
-  - "&snipe"
+  - "/snipe"
 since: 1

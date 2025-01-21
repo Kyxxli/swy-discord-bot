@@ -4,7 +4,7 @@ import 'package:yaml/yaml.dart';
 // import '../types/structs.dart';
 
 Future<dynamic> getCommandExtraData(String cmd) async {
-  String commandPath = path.join(Directory.current.path, 'lib', 'src', 'commands', '${cmd}_command.yml');
+  String commandPath = path.join(Directory.current.path, 'lib', 'src', 'command_data', '${cmd}_command.yml');
   File commandData = File(commandPath);
   String fileContent = await commandData.readAsString();
 
