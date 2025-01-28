@@ -43,14 +43,14 @@ ChatCommand snipeCommand = ChatCommand(
         name: msgAuthor.globalName ?? msgAuthor.username,
         iconUrl: msgAuthor.avatar.url,
       ),
-      title: 'Mensaje eliminado de ${msgAuthor.globalName ?? msgAuthor.username}',
-      description: msgData.message,
+      title: '<#${context.channel.id}> \u2022 <t:${msgData.timestamp}:t>',
+      description: '${msgData.message}\n',
       footer: EmbedFooterBuilder(
         text: 'Solicitado por ${author.username}',
         iconUrl: author.avatar.url,
       ),
       fields: [],
-      color: DiscordColor.fromRgb(r, g, b)
+      color: DiscordColor.fromRgb(r, g, b),
     );
 
     if (msgData.attachmentCount! == 1) {

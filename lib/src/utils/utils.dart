@@ -6,13 +6,16 @@ class ChannelMessage {
   String? message;
   int? attachmentCount;
   List? attachmentList;
+  int? timestamp;
+  String? channelName;
 
   ChannelMessage({
     required this.authorID,
     required this.authorAvatarURL,
     required this.message,
     required this.attachmentCount,
-    required this.attachmentList
+    required this.attachmentList,
+    required this.timestamp,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,7 +24,8 @@ class ChannelMessage {
       'authorAvatarURL': authorAvatarURL.toString(),
       'message': message.toString(),
       'attachmentCount': attachmentCount,
-      'attachmentList': attachmentList
+      'attachmentList': attachmentList,
+      'timestamp': timestamp,
     };
   }
 
@@ -31,7 +35,8 @@ class ChannelMessage {
       authorAvatarURL: Uri.parse(map['authorAvatarURL']),
       message: map['message'],
       attachmentCount: map['attachmentCount'],
-      attachmentList: map['attachmentList']
+      attachmentList: map['attachmentList'],
+      timestamp: map['timestamp'],
     );
   }
 }
