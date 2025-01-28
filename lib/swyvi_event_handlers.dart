@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:path/path.dart' as path;
 import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_commands/nyxx_commands.dart';
-import 'package:swyvi_discord_bot/src/utils/utils.dart';
+import 'package:swyvi_discord_bot/src/utils/to_channel_message.dart';
 
 class EventHandlers {
   void listenCommandPlugin(CommandsPlugin commands) {

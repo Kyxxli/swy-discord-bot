@@ -6,7 +6,7 @@ import 'package:nyxx_commands/nyxx_commands.dart';
 import 'package:path/path.dart' as path;
 import 'package:swyvi_discord_bot/src/utils/get_random_color.dart';
 import 'package:swyvi_discord_bot/src/utils/to_list.dart';
-import 'package:swyvi_discord_bot/src/utils/utils.dart';
+import 'package:swyvi_discord_bot/src/utils/to_channel_message.dart';
 
 ChatCommand snipeCommand = ChatCommand(
   'snipe',
